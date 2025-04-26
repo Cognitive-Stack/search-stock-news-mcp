@@ -10,6 +10,10 @@
 
 The Model Context Protocol (MCP) is an open standard that enables AI systems to interact seamlessly with various data sources and tools, facilitating secure, two-way connections.
 
+<a href="https://glama.ai/mcp/servers/@Cognitive-Stack/search-stock-news-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@Cognitive-Stack/search-stock-news-mcp/badge" alt="Search Stock News Server MCP server" />
+</a>
+
 The Search Stock News MCP server provides:
 
 * Real-time stock news search capabilities via Tavily API
@@ -184,4 +188,4 @@ Add the server configuration:
 
 ## License
 
-MIT 
+MIT

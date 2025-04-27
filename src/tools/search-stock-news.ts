@@ -6,9 +6,11 @@ import { StockNewsResult } from '../types/tools';
 
 export default async (
   symbol: string,
-  companyName: string
+  companyName: string,
+  days: number,
+  minScore: number
 ): Promise<Array<{
-  template: string;
+  searchQuery: string;
   results: StockNewsResult[];
 }>> => {
   const config = getConfig();
@@ -16,7 +18,6 @@ export default async (
     apiKey, 
     maxResults, 
     searchDepth,
-    minScore,
     queryTemplates,
     includeDomains,
     excludeDomains
@@ -38,6 +39,7 @@ export default async (
         searchDepth,
         topics: ['news'],
         timeRange: "d",
+        days,
         maxResults,
         includeDomains,
         excludeDomains
@@ -56,7 +58,7 @@ export default async (
         .sort((a, b) => b.score - a.score);
 
       allResults.push({
-        template,
+        searchQuery,
         results: filteredResults
       });
 

@@ -10,12 +10,16 @@ export const tools: ToolConfig[] = [
     description: "Search for stock-related news using Tavily API",
     parameters: z.object({
       symbol: z.string().describe("Stock symbol to search for (e.g., 'AAPL')"),
-      companyName: z.string().describe("Full company name to include in the search")
+      companyName: z.string().describe("Full company name to include in the search"),
+      days: z.number().describe("Number of days to search for news"),
+      minScore: z.number().describe("Minimum score to include in the results")
     }),
     execute: async (args) => {
       const result = await searchStockNews(
         args.symbol,
-        args.companyName
+        args.companyName,
+        args.days,
+        args.minScore
       );
       return JSON.stringify(result);
     },

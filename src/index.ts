@@ -11,7 +11,7 @@ dotenv.config();
 
 const server = new FastMCP({
   name: "Search Stock News MCP",
-  version: "1.0.0",
+  version: "1.0.3",
 });
 
 // Register all tools
@@ -22,16 +22,28 @@ tools.forEach((tool) => {
 // Get transport type from environment variable or default to stdio
 const transportType = process.env.TRANSPORT_TYPE || "stdio";
 
-if (transportType === "sse") {
-  server.start({
-    transportType: "sse",
-    sse: {
-      endpoint: "/sse",
-      port: parseInt(process.env.PORT || "8080", 10),
-    },
-  });
-} else {
-  server.start({
-    transportType: "stdio",
-  });
-} 
+async function main() {
+  try {
+    if (transportType === "sse") {
+      await server.start({
+        transportType: "sse",
+        sse: {
+          endpoint: "/sse",
+          port: parseInt(process.env.PORT || "8080", 10),
+        },
+      });
+    } else {
+      await server.start({
+        transportType: "stdio",
+      });
+    }
+  } catch (error) {
+    console.error("Failed to start server:", error);
+    process.exit(1);
+  }
+}
+
+main().catch((error) => {
+  console.error("Fatal error in main():", error);
+  process.exit(1);
+});

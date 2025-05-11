@@ -1,6 +1,6 @@
 {
   "name": "search-stock-news-mcp",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "MCP server for searching stock news using Tavily API",
   "main": "dist/index.js",
   "type": "commonjs",

@@ -4,6 +4,8 @@
   <img src="logo.png" width="300" alt="VLD Logo">
 </p>
 
+[![smithery badge](https://smithery.ai/badge/search-stock-news-mcp)](https://smithery.ai/server/search-stock-news-mcp)
+
 > 🔌 **Compatible with Cline, Cursor, Claude Desktop, and any other MCP Clients!**
 > 
 > Search Stock News MCP works seamlessly with any MCP client

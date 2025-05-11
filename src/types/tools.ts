@@ -28,4 +28,36 @@ export interface StockNewsResult {
   content: string;
   publishedDate: string;
   score: number;
+}
+
+export interface GeneralSearchResult {
+  title: string;
+  url: string;
+  content: string;
+  publishedDate: string;
+  score: number;
+}
+
+export interface GeneralSearchConfig {
+  apiKey: string;
+  maxResults: number;
+  searchDepth: 'basic' | 'advanced';
+  minScore: number;
+}
+
+export interface DramaSearchResult {
+  title: string;
+  url: string;
+  content: string;
+  publishedDate: string;
+  score: number;
+  category: 'legal' | 'scandal' | 'financial' | 'product' | 'workforce' | 'environmental' | 'security' | 'other';
+}
+
+export interface DramaSearchConfig {
+  apiKey: string;
+  maxResults: number;
+  searchDepth: 'basic' | 'advanced';
+  minScore: number;
+  queryTemplates: string[];
 } 

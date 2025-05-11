@@ -4,19 +4,6 @@ import { tavily } from '@tavily/core';
 import { getConfig } from '../config/env';
 import { DramaSearchResult } from '../types/tools';
 
-const dramaQueryTemplates = [
-  "{company_name} ({symbol}) controversy",
-  "{company_name} ({symbol}) scandal",
-  "{company_name} ({symbol}) lawsuit",
-  "{company_name} ({symbol}) legal issues",
-  "{company_name} ({symbol}) controversy latest news",
-  "{company_name} ({symbol}) scandal latest news",
-  "{company_name} ({symbol}) drama",
-  "{company_name} ({symbol}) problems",
-  "{company_name} ({symbol}) issues",
-  "{company_name} ({symbol}) negative news"
-];
-
 export default async (
   symbol: string,
   companyName: string,
@@ -28,7 +15,7 @@ export default async (
   results: DramaSearchResult[];
 }>> => {
   const config = getConfig();
-  const { apiKey } = config;
+  const { apiKey, dramaQueryTemplates, dramaIncludeDomains } = config;
 
   // Initialize Tavily client
   const tvly = tavily({ apiKey });
@@ -45,7 +32,7 @@ export default async (
       const response = await tvly.search(searchQuery, {
         searchDepth,
         maxResults,
-        includeDomains: [],
+        includeDomains: dramaIncludeDomains,
         excludeDomains: []
       });
 

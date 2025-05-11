@@ -59,5 +59,6 @@ export interface DramaSearchConfig {
   maxResults: number;
   searchDepth: 'basic' | 'advanced';
   minScore: number;
-  queryTemplates: string[];
+  dramaQueryTemplates: string[];
+  dramaIncludeDomains: string[];
 } 

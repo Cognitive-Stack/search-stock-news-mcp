@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/cognitive-stack-search-stock-news-mcp-badge.png)](https://mseep.ai/app/cognitive-stack-search-stock-news-mcp)
+
 <h1 align="center">Search Stock News MCP Server 🚀</h1>
 
 <p align="center">

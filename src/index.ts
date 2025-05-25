@@ -11,7 +11,10 @@ dotenv.config();
 
 const server = new FastMCP({
   name: "Search Stock News MCP",
-  version: "1.0.4",
+  version: "1.0.12",
+  roots: {
+    enabled: false
+  }
 });
 
 // Register all tools
